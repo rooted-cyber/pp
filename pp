@@ -12,19 +12,19 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 if [ $1 == "i" ];then
-cd /pip
+cd ~/pip
 python3 -m pip install $2
 elif [ $1 == "u" ];then
-cd /pip
+cd ~/pip
 python3 -m pip uninstall $2 -y
 elif [ $1 == "s" ];then
-cd /pip
+cd ~/pip
 python3 -m pip show $2
 elif [ $1 == "f" ];then
-cd /pip
+cd ~/pip
 python3 -m pip freeze
 elif [ $1 == "c" ];then
-cd /pip
+cd ~/pip
 fc="$(python3 -m pip freeze | grep -e "$2")"
 if [ -z "$fc" ];then
 printf "$2 "
