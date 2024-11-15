@@ -3,7 +3,6 @@ msg() {
 echo -e "$@" >&2
 }
 if [ $# -eq 0 ]; then
-    echo "No arguments provided."
     msg pp i - install pip package
     msg pp u - uninstall pip package
     msg pp s - show pip package
@@ -13,7 +12,7 @@ if [ $# -eq 0 ]; then
 fi
 if [ $1 == "i" ];then
 cd ~/pip
-python3 -m pip install $2
+python3 -m pip install $2 $3
 elif [ $1 == "u" ];then
 cd ~/pip
 python3 -m pip uninstall $2 -y
