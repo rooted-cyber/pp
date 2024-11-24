@@ -17,13 +17,15 @@ elif [ $1 == "u" ];then
 python3 -m venv rootedcyber
 rootedcyber/bin/pip uninstall $2 -y
 elif [ $1 == "s" ];then
+cd ~
 python3 -m venv rootedcyber
-️rootedcyber/bin/pip show $2
+️~/rootedcyber/bin/pip show $2
 elif [ $1 == "f" ];then
+cd ~
 python3 -m venv rootedcyber
-rootedcyber/bin/pip freeze
+~/rootedcyber/bin/pip freeze
 elif [ $1 == "c" ];then
-fc="$(rootedcyber/bin/pip freeze | grep -e "$2")"
+fc="$(~/rootedcyber/bin/pip freeze | grep -e "$2")"
 if [ -z "$fc" ];then
 printf "$2 "
 msg is not install
