@@ -3,7 +3,7 @@ msg() {
 echo -e "$@" >&2
 }
 if [ $# -eq 0 ]; then
-    msg pp i - install pip package
+    msg pp i - install pip package.
     msg pp u - uninstall pip package
     msg pp s - show pip package
     msg pp f - list of pip package
