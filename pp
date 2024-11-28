@@ -2,6 +2,9 @@
 msg() {
 echo -e "$@" >&2
 }
+mdg() {
+cd ~/rootedcyber/bin
+}
 if [ $# -eq 0 ]; then
     msg pp i - install pip package
     msg pp u - uninstall pip package
@@ -11,15 +14,16 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 if [ $1 == "i" ];then
-python3 -m ~/rootedcyber/bin/pip install $2 $3
+mdg
+python3 -m pip install $2 $3
 elif [ $1 == "u" ];then
-python3 -m ~/rootedcyber/bin/pip uninstall $2 -y
+python3 -m pip uninstall $2 -y
 elif [ $1 == "s" ];then
-python3 -m ~/️rootedcyber/bin/pip show $2
+python3 -m pip show $2
 elif [ $1 == "f" ];then
-python3 -m ~/rootedcyber/bin/pip freeze
+python3 -m pip freeze
 elif [ $1 == "c" ];then
-fc="$(python3 -m ~/rootedcyber/bin/pip freeze | grep -e "$2")"
+fc="$(python3 -m pip freeze | grep -e "$2")"
 if [ -z "$fc" ];then
 printf "$2 "
 msg is not install
