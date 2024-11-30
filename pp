@@ -14,10 +14,9 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 if [ $1 == "i" ];then
-mdg
-python3 -m pip install $2 $3
+python3 -m pip install "$@" >&2
 elif [ $1 == "u" ];then
-python3 -m pip uninstall $2 -y
+python3 -m pip uninstall "$@" >&2 -y
 elif [ $1 == "s" ];then
 python3 -m pip show $2
 elif [ $1 == "f" ];then
