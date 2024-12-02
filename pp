@@ -3,8 +3,6 @@ msg() {
 echo -e "$@" >&2
 }
 mdg() {
-cd ~
-python3 -m venv .rootedcyber
 cd ~/.rootedcyber/bin
 }
 if [ $# -eq 0 ]; then
@@ -27,14 +25,17 @@ mdg
 elif [ $1 == "f" ];then
 mdg
 ./pip freeze
+elif [ $1 == "$@" >&2 ];then
+mdg
+./pip "$@" >&2
 elif [ $1 == "c" ];then
 mdg
 fc="$(./pip freeze | grep -e "$2")"
 if [ -z "$fc" ];then
 printf "$2 "
-msg is not install
+msg not installed this 👇👇
 else
 printf "$fc\n "
-msg  installed this 👆👆
+msg  installed this 👇👇
 fi
 fi
