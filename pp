@@ -17,19 +17,19 @@ if [ $# -eq 0 ]; then
 fi
 if [ $1 == "i" ];then
 mdg
-python3 -m pip install "$@" >&2
+./pip install "$@" >&2
 elif [ $1 == "u" ];then
 mdg
-python3 -m pip uninstall "$@" >&2 -y
+./pip uninstall "$@" >&2 -y
 elif [ $1 == "s" ];then
 mdg
-python3 -m pip show $2
+./pip show $2
 elif [ $1 == "f" ];then
 mdg
-python3 -m pip freeze
+./pip freeze
 elif [ $1 == "c" ];then
 mdg
-fc="$(python3 -m pip freeze | grep -e "$2")"
+fc="$(./pip freeze | grep -e "$2")"
 if [ -z "$fc" ];then
 printf "$2 "
 msg is not install
