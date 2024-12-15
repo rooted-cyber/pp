@@ -6,6 +6,7 @@ mdg() {
 cd ~/.rootedcyber/bin
 }
 if [ $# -eq 0 ]; then
+msg Added venv
     msg pp i - install pip package
     msg pp u - uninstall pip package
     msg pp s - show pip package
